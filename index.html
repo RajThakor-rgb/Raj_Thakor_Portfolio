@@ -27,6 +27,12 @@
             box-sizing: border-box;
         }
 
+        html {
+            /* FIX: Added scroll-padding-top so anchor links aren't hidden behind the fixed navbar */
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px; 
+        }
+
         body {
             font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.7;
@@ -83,7 +89,7 @@
         .hero {
             background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
             color: white;
-            padding: 140px 20px 80px;
+            padding: 140px 20px 120px; /* FIX: Increased bottom padding to prevent overlap with Skills section */
             position: relative;
             overflow: hidden;
             margin-top: 65px;
@@ -98,6 +104,7 @@
             background-size: 50px 50px;
             animation: drift 60s linear infinite;
             opacity: 0.3;
+            pointer-events: none; /* FIX: Ensures background doesn't block clicks */
         }
 
         @keyframes drift {
@@ -109,7 +116,7 @@
             max-width: 1100px;
             margin: 0 auto;
             position: relative;
-            z-index: 1;
+            z-index: 1; /* FIX: Ensures content is above the background animation */
             text-align: center;
         }
 
@@ -185,6 +192,8 @@
             flex-wrap: wrap;
             margin-top: 36px;
             justify-content: center;
+            position: relative;
+            z-index: 5; /* FIX: Ensures buttons are on top of overlapping sections */
         }
 
         .btn {
@@ -418,6 +427,7 @@
             border: none;
             color: white;
             line-height: 1;
+            z-index: 10;
         }
 
         .modal-close:hover {
@@ -854,7 +864,7 @@
             }
 
             .hero {
-                padding: 100px 20px 60px;
+                padding: 100px 20px 100px; /* Adjusted for mobile */
             }
 
             .hero-name {
@@ -924,11 +934,6 @@
                 width: 140px;
                 height: 140px;
             }
-        }
-
-        /* Smooth Scrolling */
-        html {
-            scroll-behavior: smooth;
         }
 
         /* Custom Scrollbar */
@@ -1510,7 +1515,8 @@
             <p>Looking for graduate analyst roles in the UK (Summer/Autumn 2026). If you're hiring someone who can analyze data, solve problems, and learn quickly, let's talk.</p>
             
             <div class="contact-links">
-                <a href="/cdn-cgi/l/email-protection#a9c8cbc1c0dbc8c3ddc1c8c2c6db9b999b9de9c6dcddc5c6c6c287cac6c4" class="contact-link">
+                <!-- FIX: Replaced broken Cloudflare email link with a working mailto link -->
+                <a href="mailto:contact@rajthakor.com" class="contact-link">
                     📧 Email Me
                 </a>
                 <a href="https://www.linkedin.com/in/rajthakor/" target="_blank" class="contact-link">
@@ -1546,7 +1552,7 @@
             <div class="modal-body">
                 <div class="project-section">
                     <h3>Itzel Consulting & Recruitment</h3>
-                    <p>Built two websites for a UK education consulting business. They help international students find university programs. I used WordPress with Elementor, plus some custom HTML/CSS that I generated with Claude's help.</p>
+                    <p>Built a website for a UK education consulting business. They help international students find university programs. I used WordPress with Elementor, plus some custom HTML/CSS that I generated with Claude's help.</p>
                 </div>
 
                 <div class="project-section">
@@ -1575,8 +1581,11 @@
                     <a href="https://itzelrecruitment.com/" target="_blank" class="btn btn-primary" onclick="event.stopPropagation()">
                         🔗 View Itzel Site
                     </a>
-                    <a href="https://wellnessvibesbyhitakshi.in/" target="_blank" class="btn btn-outline" onclick="event.stopPropagation()">
+                    <a href="https://wellnessvibesbyhitakshi.in/" target="_blank" class="btn btn-primary" onclick="event.stopPropagation()">
                         🔗 View Wellness Site
+                    </a>
+                    <a href="https://melodic-newt-99a.notion.site/Raj-s-Ultimate-Fitness-Guide-188623a8b0b780649cf2f27f61124229" target="_blank" class="btn btn-primary" onclick="event.stopPropagation()">
+                        🔗 View Fitness Guide
                     </a>
                 </div>
             </div>
@@ -1632,7 +1641,7 @@
                     <a href="https://github.com/RajThakor-rgb/Portfolio/blob/main/Python.ipynb" target="_blank" class="btn btn-primary" onclick="event.stopPropagation()">
                         💻 View Python Code
                     </a>
-                    <a href="https://github.com/RajThakor-rgb/Portfolio/raw/59035646b91ce40cd0d7ed38da9e510e22ac7697/UK%20Visa%20Sponsorship%20Guide%20100%20Companies.xlsx" class="btn btn-outline" download onclick="event.stopPropagation()">
+                    <a href="https://github.com/RajThakor-rgb/Portfolio/raw/59035646b91ce40cd0d7ed38da9e510e22ac7697/UK%20Visa%20Sponsorship%20Guide%20100%20Companies.xlsx" class="btn btn-primary" download onclick="event.stopPropagation()">
                         📥 Download Database
                     </a>
                 </div>
@@ -1730,7 +1739,7 @@
                     <a href="https://github.com/RajThakor-rgb/Portfolio/raw/59035646b91ce40cd0d7ed38da9e510e22ac7697/fast%20track%20timeline%2077days.pdf" class="btn btn-primary" download onclick="event.stopPropagation()">
                         📄 View Timeline PDF
                     </a>
-                    <a href="https://fluff-color-209.notion.site/IT-Project-Work-Breakdown-Structure-2d8f34d2694981ab8f7bc74476178e45" target="_blank" class="btn btn-outline" onclick="event.stopPropagation()">
+                    <a href="https://fluff-color-209.notion.site/IT-Project-Work-Breakdown-Structure-2d8f34d2694981ab8f7bc74476178e45" target="_blank" class="btn btn-primary" onclick="event.stopPropagation()">
                         🔗 View Notion System
                     </a>
                 </div>
@@ -1822,7 +1831,7 @@
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         function openModal(modalName) {
             const modal = document.getElementById(modalName + 'Modal');
             if (modal) {
@@ -1865,6 +1874,15 @@
             }
         });
 
-        // Close mobile menu when clicking a link
+        // FIX: Completed the truncated script that closes the mobile menu when a link is clicked
         document.querySelectorAll('nav ul li a').forEach(link => {
             link.addEventListener('click', function() {
+                const menu = document.getElementById('navMenu');
+                if (menu.classList.contains('active')) {
+                    menu.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
