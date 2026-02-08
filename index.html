@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raj Thakor | Business Analyst Portfolio</title>
-    <meta name="description" content="Business Analyst and AI Enthusiast. MSc Student in AI for Business at University of Law, London. Specialising in data analysis, automation, and strategic problem-solving.">
+    <meta name="description" content="Business Analyst and AI Enthusiast. MSc Student in AI for Business at University of Law, London. Specialising in data analysis, automation, and problem-solving.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -266,6 +266,7 @@
             background: var(--card-bg);
             border-radius: 12px;
             padding: 32px 24px;
+            cursor: pointer;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             border: 1px solid rgba(0,0,0,0.06);
@@ -327,6 +328,187 @@
 
         .skill-category li:last-child {
             border-bottom: none;
+        }
+
+        .skill-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            color: var(--gradient-start);
+            font-weight: 600;
+            margin-top: 12px;
+            transition: gap 0.3s ease;
+        }
+
+        .skill-category:hover .skill-cta {
+            gap: 10px;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.75);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(4px);
+            padding: 20px;
+        }
+
+        .modal.active {
+            display: flex;
+            animation: modalFadeIn 0.3s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-container {
+            background: white;
+            border-radius: 16px;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalSlideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 24px 48px rgba(0,0,0,0.2);
+        }
+
+        @keyframes modalSlideUp {
+            from {
+                transform: translateY(40px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            color: white;
+            padding: 36px 40px;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 24px;
+            font-size: 1.8rem;
+            cursor: pointer;
+            background: rgba(255,255,255,0.15);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            border: none;
+            color: white;
+            line-height: 1;
+        }
+
+        .modal-close:hover {
+            background: rgba(255,255,255,0.25);
+            transform: rotate(90deg);
+        }
+
+        .modal-icon {
+            font-size: 2.6rem;
+            margin-bottom: 12px;
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .modal-subtitle {
+            font-size: 1rem;
+            opacity: 0.92;
+        }
+
+        .modal-body {
+            padding: 36px 40px;
+        }
+
+        .project-section {
+            margin-bottom: 28px;
+        }
+
+        .project-section h3 {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .project-section p {
+            color: var(--text-dark);
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .project-section ul {
+            margin-left: 20px;
+            color: var(--text-dark);
+        }
+
+        .project-section ul li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .highlight-box {
+            background: #f0f4ff;
+            border-left: 4px solid var(--gradient-start);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .highlight-box h4 {
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .modal-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin: 24px 0;
+        }
+
+        .tag {
+            background: #e6f0ff;
+            color: var(--gradient-start);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 28px;
+            flex-wrap: wrap;
         }
 
         /* Projects Section */
@@ -473,7 +655,7 @@
 
         .education-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 24px;
             margin-top: 40px;
         }
@@ -700,6 +882,15 @@
                 grid-template-columns: 1fr;
             }
 
+            .modal-container {
+                margin: 10px;
+            }
+
+            .modal-header,
+            .modal-body {
+                padding: 28px 24px;
+            }
+
             .cta-buttons {
                 flex-direction: column;
             }
@@ -825,24 +1016,24 @@
             <img src="https://raw.githubusercontent.com/RajThakor-rgb/Raj_Thakor_Portfolio/refs/heads/main/Raj-Thakor_9866-Edit.jpg" alt="Raj Thakor" class="profile-photo">
             <h1 class="hero-name">Raj Thakor</h1>
             <p class="hero-title">Business Analyst | AI Enthusiast</p>
-            <p class="hero-tagline">MSc Student in AI for Business at University of Law, London. Turning business challenges into AI-powered solutions through data analysis, automation, and strategic thinking.</p>
+            <p class="hero-tagline">MSc student in AI for Business at University of Law, London. I use data analysis, Python, and AI tools to solve real problems and make better business decisions.</p>
             
             <div class="stats">
                 <div class="stat-item">
-                    <span class="stat-number">5+</span>
-                    <span class="stat-label">Client Websites</span>
+                    <span class="stat-number">3+</span>
+                    <span class="stat-label">Years Experience</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">500+</span>
-                    <span class="stat-label">Pages Digitised</span>
+                    <span class="stat-number">10+</span>
+                    <span class="stat-label">Projects Completed</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">Countries Worked</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">200+</span>
                     <span class="stat-label">Students Helped</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">80%</span>
-                    <span class="stat-label">Time Saved</span>
                 </div>
             </div>
 
@@ -865,75 +1056,73 @@
         <div class="section-title">
             <h2>Skills & Expertise</h2>
         </div>
-        <p class="section-subtitle">Technical and soft skills developed through academic and professional experience</p>
+        <p class="section-subtitle">Click any skill to see real projects I've completed</p>
 
         <div class="skills-grid">
-            <div class="skill-category">
+            <div class="skill-category" onclick="openModal('web')">
                 <h3><span class="skill-icon">🌐</span> Web Development</h3>
                 <ul>
                     <li>WordPress & Elementor</li>
                     <li>HTML & CSS</li>
                     <li>Responsive Design</li>
-                    <li>SEO Optimisation</li>
-                    <li>Client Communication</li>
+                    <li>SEO Basics</li>
                 </ul>
+                <div class="skill-cta">View projects →</div>
             </div>
 
-            <div class="skill-category">
+            <div class="skill-category" onclick="openModal('python')">
                 <h3><span class="skill-icon">📊</span> Data Analysis</h3>
                 <ul>
-                    <li>Python (Pandas, NumPy, Matplotlib)</li>
-                    <li>Microsoft Excel (Advanced)</li>
-                    <li>SQL Databases</li>
-                    <li>Data Visualisation</li>
-                    <li>Statistical Analysis</li>
+                    <li>Python (Pandas, Matplotlib)</li>
+                    <li>Excel (Pivot Tables, Macros)</li>
+                    <li>SQL Basics</li>
+                    <li>Data Visualization</li>
                 </ul>
+                <div class="skill-cta">View projects →</div>
             </div>
 
-            <div class="skill-category">
+            <div class="skill-category" onclick="openModal('ai')">
                 <h3><span class="skill-icon">🤖</span> AI & Automation</h3>
                 <ul>
                     <li>ChatGPT & Claude AI</li>
                     <li>Google Gemini</li>
-                    <li>Prompt Engineering</li>
-                    <li>N8N Workflow Automation</li>
-                    <li>Notion AI Integration</li>
+                    <li>N8N Workflows</li>
+                    <li>Notion AI</li>
                 </ul>
+                <div class="skill-cta">View projects →</div>
             </div>
 
-            <div class="skill-category">
+            <div class="skill-category" onclick="openModal('project-mgmt')">
                 <h3><span class="skill-icon">📋</span> Project Management</h3>
                 <ul>
-                    <li>Work Breakdown Structure (WBS)</li>
-                    <li>Agile Methodology</li>
-                    <li>Notion Project Architecture</li>
+                    <li>Work Breakdown Structure</li>
                     <li>Timeline Planning</li>
-                    <li>Risk Management</li>
-                    <li>Stakeholder Communication</li>
+                    <li>Notion for PM</li>
+                    <li>Agile Basics</li>
                 </ul>
+                <div class="skill-cta">View projects →</div>
             </div>
 
-            <div class="skill-category">
-                <h3><span class="skill-icon">💼</span> Business & Strategy</h3>
+            <div class="skill-category" onclick="openModal('business')">
+                <h3><span class="skill-icon">💼</span> Business Skills</h3>
                 <ul>
                     <li>Market Research</li>
-                    <li>Competitive Analysis</li>
+                    <li>Data Organization</li>
                     <li>Process Improvement</li>
-                    <li>Strategic Planning</li>
-                    <li>Business Ethics</li>
+                    <li>Team Training</li>
                 </ul>
+                <div class="skill-cta">View projects →</div>
             </div>
 
-            <div class="skill-category">
-                <h3><span class="skill-icon">🎯</span> Soft Skills</h3>
+            <div class="skill-category" onclick="openModal('soft-skills')">
+                <h3><span class="skill-icon">🎯</span> Leadership</h3>
                 <ul>
-                    <li>Leadership & Team Management</li>
+                    <li>Team Management (8+ people)</li>
+                    <li>Public Speaking</li>
+                    <li>Cross-Cultural Work</li>
                     <li>Problem-Solving</li>
-                    <li>Adaptability & Learning Agility</li>
-                    <li>Cross-Cultural Communication</li>
-                    <li>Presentation & Public Speaking</li>
-                    <li>Time Management</li>
                 </ul>
+                <div class="skill-cta">View experience →</div>
             </div>
         </div>
     </section>
@@ -944,21 +1133,21 @@
             <div class="section-title">
                 <h2>Featured Projects</h2>
             </div>
-            <p class="section-subtitle">Real-world applications and client deliverables</p>
+            <p class="section-subtitle">Real work I've done for clients and academic projects</p>
 
             <div class="project-card-main">
                 <div class="project-header">
                     <span class="project-icon">🗂️</span>
                     <div>
-                        <h3 class="project-title">UK Visa Sponsorship Research Database</h3>
+                        <h3 class="project-title">UK Visa Sponsorship Database</h3>
                     </div>
                 </div>
-                <p class="project-description">Compiled and categorised 100+ UK employers offering international student sponsorship. Used AI tools to research company data, graduate schemes, and salary ranges across 9 functional departments. Created for University of Law Business School students.</p>
+                <p class="project-description">Created a database of 100+ UK companies that sponsor international students. Used AI to research company info, then organized everything by department (Finance, Tech, AI, etc.). Now used by 200+ students at my university to find graduate jobs.</p>
                 <div class="project-tags">
                     <span class="project-tag">Excel</span>
                     <span class="project-tag">AI Research</span>
-                    <span class="project-tag">Data Organisation</span>
-                    <span class="project-tag">200+ Students Served</span>
+                    <span class="project-tag">ChatGPT</span>
+                    <span class="project-tag">200+ Students</span>
                 </div>
             </div>
 
@@ -966,16 +1155,15 @@
                 <div class="project-header">
                     <span class="project-icon">📋</span>
                     <div>
-                        <h3 class="project-title">Medical Order Management System - WBS</h3>
+                        <h3 class="project-title">Healthcare System Project Plan</h3>
                     </div>
                 </div>
-                <p class="project-description">Developed comprehensive 77-day development timeline and Work Breakdown Structure for healthcare SaaS platform for international client in Brazil. Created 5-phase roadmap covering architecture, backend/frontend development, testing, and deployment with parallel workstream planning.</p>
+                <p class="project-description">Built a 77-day project timeline for a friend in Brazil who's developing a hospital management system. Created a full Work Breakdown Structure showing what needs to happen in each phase, from setup to launch.</p>
                 <div class="project-tags">
                     <span class="project-tag">Project Planning</span>
-                    <span class="project-tag">WBS Design</span>
-                    <span class="project-tag">Agile Methodology</span>
-                    <span class="project-tag">Healthcare SaaS</span>
-                    <span class="project-tag">International Client</span>
+                    <span class="project-tag">WBS</span>
+                    <span class="project-tag">Timeline Design</span>
+                    <span class="project-tag">International</span>
                 </div>
             </div>
 
@@ -983,30 +1171,15 @@
                 <div class="project-header">
                     <span class="project-icon">🌐</span>
                     <div>
-                        <h3 class="project-title">Itzel Consulting & Recruitment</h3>
+                        <h3 class="project-title">Client Websites</h3>
                     </div>
                 </div>
-                <p class="project-description">Developed two professional websites for UK education consulting client promoting universities and Russell Group online programmes to international students. Delivered mobile-responsive designs with integrated contact systems and SEO optimisation.</p>
+                <p class="project-description">Built two professional websites for a UK education consulting business and one for a wellness coach. Used WordPress with custom HTML/CSS (generated with AI help). All sites work perfectly on mobile and desktop.</p>
                 <div class="project-tags">
                     <span class="project-tag">WordPress</span>
                     <span class="project-tag">Elementor</span>
-                    <span class="project-tag">Client Delivery</span>
-                    <span class="project-tag">SEO</span>
-                </div>
-            </div>
-
-            <div class="project-card-main">
-                <div class="project-header">
-                    <span class="project-icon">🧘</span>
-                    <div>
-                        <h3 class="project-title">Wellness Vibes by Hitakshi</h3>
-                    </div>
-                </div>
-                <p class="project-description">Built professional wellness coaching website with booking system, blog integration, and mobile-responsive design. Showcases services, testimonials, and contact forms with focus on user experience.</p>
-                <div class="project-tags">
-                    <span class="project-tag">WordPress</span>
                     <span class="project-tag">Responsive Design</span>
-                    <span class="project-tag">UX Design</span>
+                    <span class="project-tag">Client Work</span>
                 </div>
             </div>
 
@@ -1017,12 +1190,12 @@
                         <h3 class="project-title">Job Application Automation</h3>
                     </div>
                 </div>
-                <p class="project-description">Built intelligent N8N workflow automating job application tracking. Uses Google Gemini AI to extract structured data from job posting URLs and automatically populate Notion database, reducing manual entry time by 80%.</p>
+                <p class="project-description">Built a workflow using N8N and Google Gemini that automatically extracts job details from URLs and adds them to my Notion database. Cut my data entry time by 80% during my job search.</p>
                 <div class="project-tags">
                     <span class="project-tag">N8N</span>
                     <span class="project-tag">Notion API</span>
                     <span class="project-tag">Google Gemini</span>
-                    <span class="project-tag">Web Scraping</span>
+                    <span class="project-tag">Automation</span>
                 </div>
             </div>
 
@@ -1033,12 +1206,12 @@
                         <h3 class="project-title">UK EV Infrastructure Analysis</h3>
                     </div>
                 </div>
-                <p class="project-description">Analysed DVLA vehicle registration and Statista charging data using Python to assess UK readiness for 2030 ICE ban. Concluded adequate charging points exist but fast-charging infrastructure needs investment.</p>
+                <p class="project-description">Used Python to analyze UK vehicle registration data and charging station numbers. Found that while there are enough charging points overall, the UK needs way more fast chargers before the 2030 petrol car ban.</p>
                 <div class="project-tags">
                     <span class="project-tag">Python</span>
                     <span class="project-tag">Pandas</span>
                     <span class="project-tag">Matplotlib</span>
-                    <span class="project-tag">Data Visualisation</span>
+                    <span class="project-tag">Academic</span>
                 </div>
             </div>
 
@@ -1046,15 +1219,15 @@
                 <div class="project-header">
                     <span class="project-icon">💾</span>
                     <div>
-                        <h3 class="project-title">NGO Data Digitisation</h3>
+                        <h3 class="project-title">NGO Data Digitization</h3>
                     </div>
                 </div>
-                <p class="project-description">Digitised 12 months of handwritten environmental records (500+ pages) using AI tools. Implemented Notion as knowledge management system for 10-person team, improving reporting accuracy by 20%.</p>
+                <p class="project-description">Spent a year digitizing handwritten environmental records (500+ pages) for a small NGO in India. Set up a Notion system for their team to track everything. Improved their reporting accuracy by 20%.</p>
                 <div class="project-tags">
                     <span class="project-tag">Excel</span>
                     <span class="project-tag">Notion</span>
                     <span class="project-tag">ChatGPT</span>
-                    <span class="project-tag">Claude AI</span>
+                    <span class="project-tag">Data Entry</span>
                 </div>
             </div>
 
@@ -1062,15 +1235,14 @@
                 <div class="project-header">
                     <span class="project-icon">📋</span>
                     <div>
-                        <h3 class="project-title">Internal Project Management System</h3>
+                        <h3 class="project-title">Startup Project Management System</h3>
                     </div>
                 </div>
-                <p class="project-description">Architected custom PM solution using Notion to centralise internal communications and task tracking. Developed 5-phase Work Breakdown Structure ensuring 100% role clarity and deadline accountability for technology startup.</p>
+                <p class="project-description">Set up a project management system in Notion for an Indian tech startup. Created a structure so everyone knows what they're working on and when things are due. Still in use today.</p>
                 <div class="project-tags">
-                    <span class="project-tag">Notion Architecture</span>
+                    <span class="project-tag">Notion</span>
                     <span class="project-tag">Project Planning</span>
-                    <span class="project-tag">Workflow Optimisation</span>
-                    <span class="project-tag">Process Design</span>
+                    <span class="project-tag">Team Workflow</span>
                 </div>
             </div>
         </div>
@@ -1082,7 +1254,7 @@
             <div class="section-title">
                 <h2>Work Experience</h2>
             </div>
-            <p class="section-subtitle">Key roles demonstrating leadership, technical skills, and real-world impact</p>
+            <p class="section-subtitle">Roles showing leadership, technical work, and real impact</p>
 
             <div class="timeline">
                 <div class="timeline-item">
@@ -1091,10 +1263,10 @@
                     <div class="timeline-date">September 2025 - Present</div>
                     <div class="timeline-description">
                         <ul>
-                            <li>Research 40-50 companies weekly, identifying sponsorship opportunities for 200+ business students</li>
-                            <li>Create monthly career newsletter featuring job market insights and application strategies</li>
-                            <li>Design promotional materials using Canva for employability events and workshops</li>
-                            <li>Compiled comprehensive UK Visa Sponsorship Database serving 200+ international students</li>
+                            <li>Research 40-50 companies weekly to find job opportunities for business students</li>
+                            <li>Write monthly career newsletter with job market tips and company insights</li>
+                            <li>Design promotional materials for career events using Canva</li>
+                            <li>Created the UK Visa Sponsorship Database now used by 200+ students</li>
                         </ul>
                     </div>
                 </div>
@@ -1105,10 +1277,9 @@
                     <div class="timeline-date">October 2024 - Present</div>
                     <div class="timeline-description">
                         <ul>
-                            <li>Architected custom project management system using Notion for technology startup</li>
-                            <li>Developed 5-phase Work Breakdown Structure ensuring 100% role clarity and deadline accountability</li>
-                            <li>Managed cross-functional team communications and task tracking across development cycles</li>
-                            <li>Streamlined internal workflows improving team coordination and project visibility</li>
+                            <li>Built a custom project management system in Notion for a tech startup</li>
+                            <li>Created work breakdown structures so everyone knows their tasks and deadlines</li>
+                            <li>Help coordinate team communications across different time zones</li>
                         </ul>
                     </div>
                 </div>
@@ -1119,10 +1290,10 @@
                     <div class="timeline-date">June 2024 - May 2025</div>
                     <div class="timeline-description">
                         <ul>
-                            <li>Digitised 12 months of handwritten records (500+ pages) using AI tools</li>
-                            <li>Implemented Notion as knowledge management system for 10-person team</li>
-                            <li>Improved reporting accuracy by 20% through systematic data organisation</li>
-                            <li>Analysed environmental data identifying trends supporting grant applications</li>
+                            <li>Digitized a year's worth of handwritten records (500+ pages) using AI tools</li>
+                            <li>Set up Notion as a knowledge base for a 10-person team</li>
+                            <li>Improved reporting accuracy by 20% through better data organization</li>
+                            <li>Analyzed environmental data to support grant applications</li>
                         </ul>
                     </div>
                 </div>
@@ -1133,8 +1304,8 @@
                     <div class="timeline-date">January 2023 - December 2023</div>
                     <div class="timeline-description">
                         <ul>
-                            <li>Delivered presentations to 200+ prospective students explaining degree programmes</li>
-                            <li>Managed inquiries using university CRM system</li>
+                            <li>Gave presentations to 200+ prospective students about degree programs</li>
+                            <li>Managed student inquiries using the university's CRM system</li>
                             <li>Coordinated campus tours and recruitment events</li>
                         </ul>
                     </div>
@@ -1146,9 +1317,22 @@
                     <div class="timeline-date">August 2020 - December 2020, January 2022 - August 2022</div>
                     <div class="timeline-description">
                         <ul>
-                            <li>Managed operations of student centre serving 1,500+ students</li>
-                            <li>Supervised team of 8 staff members including hiring, training, and performance management</li>
-                            <li>Coordinated scheduling, inventory management, and facility maintenance</li>
+                            <li>Ran daily operations for a student center serving 1,500+ students</li>
+                            <li>Managed a team of 8 people - did hiring, training, and performance reviews</li>
+                            <li>Handled scheduling, inventory, and facility maintenance</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Parts Counter Salesperson</h3>
+                    <div class="timeline-company">JX Truck Centre, USA</div>
+                    <div class="timeline-date">March 2021 - December 2021</div>
+                    <div class="timeline-description">
+                        <ul>
+                            <li>Managed inventory database for 1,000+ parts</li>
+                            <li>Reduced fulfillment delays by 25% through better organization</li>
+                            <li>Learned how important accurate data is in a fast-paced environment</li>
                         </ul>
                     </div>
                 </div>
@@ -1168,7 +1352,7 @@
             <div class="section-title">
                 <h2>Education</h2>
             </div>
-            <p class="section-subtitle">Academic foundation in AI, business, and technology management</p>
+            <p class="section-subtitle">My academic background in AI, business, and technology</p>
 
             <div class="education-grid">
                 <div class="education-card">
@@ -1176,11 +1360,11 @@
                     <div class="education-degree">MSc Artificial Intelligence for Business</div>
                     <div class="education-date">June 2025 - September 2026 (Expected)</div>
                     <div class="education-highlights">
-                        <h4>Key Achievements</h4>
+                        <h4>Key Highlights</h4>
                         <ul>
-                            <li>Founded SwipeUp AI Club promoting practical AI tool adoption among business students</li>
-                            <li>Academic project: UK EV Infrastructure Analysis using Python, Pandas, and Matplotlib</li>
-                            <li>Served 200+ students as Employability Ambassador with visa sponsorship research</li>
+                            <li>Founded SwipeUp AI Club to help students learn practical AI tools</li>
+                            <li>Analyzed UK EV infrastructure using Python for a class project</li>
+                            <li>Working as Employability Ambassador helping 200+ students</li>
                         </ul>
                     </div>
                 </div>
@@ -1190,11 +1374,26 @@
                     <div class="education-degree">MST Technology Management</div>
                     <div class="education-date">January 2022 - December 2023 | GPA: 3.5/4.0</div>
                     <div class="education-highlights">
-                        <h4>Key Achievements</h4>
+                        <h4>Key Highlights</h4>
                         <ul>
-                            <li>Capstone: Developed comprehensive business plan for retail startup with market analysis and financial projections</li>
+                            <li>Capstone: Created full business plan for a retail startup</li>
                             <li>Distinguished Student Leader Award (2023)</li>
+                            <li>Worked as Graduate Assistant and Student Manager</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="education-card">
+                    <h3>Pittsburg State University, USA</h3>
+                    <div class="education-degree">BST Automotive Technology</div>
+                    <div class="education-date">January 2017 - December 2020 | GPA: 3.6/4.0</div>
+                    <div class="education-highlights">
+                        <h4>Key Highlights</h4>
+                        <ul>
+                            <li>Member of SAE Baja team (built off-road racing vehicle)</li>
+                            <li>Held multiple leadership roles in student organizations</li>
                             <li>Advancement Ambassador of the Year (2020)</li>
+                            <li>Aspiring Leader Award (2019)</li>
                         </ul>
                     </div>
                 </div>
@@ -1206,12 +1405,12 @@
     <section class="academic-section" id="academic">
         <div class="container">
             <div class="section-title">
-                <h2>Academic Work & Research</h2>
+                <h2>Academic Work</h2>
             </div>
-            <p class="section-subtitle">Coursework and projects demonstrating analytical and strategic thinking</p>
+            <p class="section-subtitle">Modules I've completed and what I'm currently studying</p>
 
             <div style="margin-top: 32px;">
-                <h3 style="font-size: 1.4rem; color: var(--text-dark); margin-bottom: 16px; font-weight: 600;">MSc AI for Business - Term 1 (Completed)</h3>
+                <h3 style="font-size: 1.4rem; color: var(--text-dark); margin-bottom: 16px; font-weight: 600;">Completed - Term 1</h3>
                 <span class="semester-label">September - December 2025</span>
                 
                 <div class="modules-grid">
@@ -1231,7 +1430,7 @@
             </div>
 
             <div style="margin-top: 48px;">
-                <h3 style="font-size: 1.4rem; color: var(--text-dark); margin-bottom: 16px; font-weight: 600;">MSc AI for Business - Term 2 (Completed)</h3>
+                <h3 style="font-size: 1.4rem; color: var(--text-dark); margin-bottom: 16px; font-weight: 600;">Completed - Term 2</h3>
                 <span class="semester-label">January - April 2026</span>
                 
                 <div class="modules-grid">
@@ -1251,8 +1450,8 @@
             </div>
 
             <div style="margin-top: 48px;">
-                <h3 style="font-size: 1.4rem; color: var(--text-dark); margin-bottom: 16px; font-weight: 600;">Upcoming Modules</h3>
-                <span class="semester-label">Term 3 (May - August 2026)</span>
+                <h3 style="font-size: 1.4rem; color: var(--text-dark); margin-bottom: 16px; font-weight: 600;">Coming Up - Term 3</h3>
+                <span class="semester-label">May - August 2026</span>
                 
                 <div class="modules-grid">
                     <div class="module-card">
@@ -1270,13 +1469,13 @@
                 </div>
             </div>
 
-            <div style="background: #f0f4ff; border-left: 4px solid var(--gradient-start); padding: 20px; border-radius: 8px; margin-top: 40px;">
-                <h4 style="color: var(--text-dark); margin-bottom: 10px; font-size: 1rem; font-weight: 600;">📝 Academic Papers & Projects</h4>
+            <div class="highlight-box" style="margin-top: 40px;">
+                <h4>📝 My Approach to Learning</h4>
                 <p style="color: var(--text-dark); line-height: 1.7; margin-bottom: 12px;">
-                    Throughout my MSc programme, I have completed research papers and business simulations analysing real-world case studies, developing strategic recommendations, and applying AI tools to solve business challenges. Projects include competitive strategy analysis, AI implementation frameworks, and data-driven decision models.
+                    Throughout my degree, I've been writing papers analyzing real business cases, running business simulations, and figuring out how to actually use AI tools in real work. I like learning by doing - building things, testing them, and fixing what doesn't work.
                 </p>
                 <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 12px;">
-                    <em>Academic papers available upon request</em>
+                    <em>Academic papers available on request</em>
                 </p>
             </div>
         </div>
@@ -1288,18 +1487,18 @@
             <div class="section-title">
                 <h2>About Me</h2>
             </div>
-            <p class="section-subtitle">Bridging business strategy with artificial intelligence</p>
+            <p class="section-subtitle">A bit about who I am and what I'm looking for</p>
 
             <div class="about-content">
-                <p>I'm a graduate student at <strong>University of Law</strong> specialising in AI for Business. My approach to learning is hands-on: I use AI tools to solve real problems, then learn from the process.</p>
+                <p>I'm finishing my <strong>MSc in AI for Business</strong> at University of Law in London. I'm originally from India, did my undergrad and first master's in the USA, and now I'm here in the UK.</p>
 
-                <p><strong>What I Do:</strong> I build websites, analyse data, implement AI solutions, and automate workflows. I've delivered client websites for UK education consulting and wellness coaching businesses, digitised organisational data systems, and created automation tools for process improvement.</p>
+                <p><strong>What I actually do:</strong> I learn by building things. I've made websites for real clients, analyzed data with Python, set up automation workflows, and digitized an entire year of records for an NGO. When I don't know how to do something, I use AI tools to help me learn - but I always test everything myself and make my own decisions.</p>
 
-                <p><strong>My Philosophy:</strong> The future of work is about using AI effectively, not replacing human judgement. I use AI to learn faster, generate solutions, and automate repetitive tasks — but I always test, verify, and make final decisions myself.</p>
+                <p><strong>How I work:</strong> I don't think AI is going to replace analysts - I think analysts who use AI well will replace those who don't. I use ChatGPT and Claude to learn faster, generate ideas, and automate boring tasks. But the thinking? That's still me.</p>
 
-                <p><strong>Beyond Work:</strong> I founded the <strong>SwipeUp AI Club</strong> at University of Law to help business students adopt practical AI tools. I believe in learning by doing and sharing knowledge with others.</p>
+                <p><strong>Outside of work:</strong> I started the <strong>SwipeUp AI Club</strong> at my university because I wanted to help other students actually USE AI tools, not just read about them. I believe you learn best by doing, not just listening to lectures.</p>
 
-                <p><strong>Currently:</strong> Completing my MSc in AI for Business and seeking graduate analyst roles in the UK starting Summer/Autumn 2026. I'm looking for opportunities where I can apply my technical skills, problem-solving ability, and self-directed learning approach to real business challenges.</p>
+                <p><strong>What I'm looking for:</strong> I'm seeking <strong>graduate analyst roles in the UK</strong> starting Summer/Autumn 2026. I want to work somewhere that values problem-solving, learning ability, and getting things done - not just having the "perfect" credentials. I'm practical, I figure things out quickly, and I deliver results.</p>
             </div>
         </div>
     </section>
@@ -1308,7 +1507,7 @@
     <section class="contact-section" id="contact">
         <div class="contact-content">
             <h2>Let's Connect</h2>
-            <p>Ready to bring AI-powered solutions to your team. I'm currently seeking graduate analyst roles in the UK starting Summer/Autumn 2026.</p>
+            <p>Looking for graduate analyst roles in the UK (Summer/Autumn 2026). If you're hiring someone who can analyze data, solve problems, and learn quickly, let's talk.</p>
             
             <div class="contact-links">
                 <a href="mailto:abhirajthakor2024@outlook.com" class="contact-link">
@@ -1330,36 +1529,368 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>© 2026 Raj Thakor. Built with HTML, CSS, and AI-powered tools.</p>
-            <p style="margin-top: 8px;">View the source code on <a href="https://github.com/RajThakor-rgb/Raj_Thakor_Portfolio" target="_blank">GitHub</a></p>
+            <p>© 2026 Raj Thakor. Built with HTML, CSS, and help from AI.</p>
+            <p style="margin-top: 8px;">View the code on <a href="https://github.com/RajThakor-rgb/Raj_Thakor_Portfolio" target="_blank">GitHub</a></p>
         </div>
     </footer>
 
+    <!-- Modals -->
+    <div id="webModal" class="modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <button class="modal-close" onclick="closeModal('web')">&times;</button>
+                <span class="modal-icon">🌐</span>
+                <h2 class="modal-title">Web Development</h2>
+                <p class="modal-subtitle">Websites I've built for real clients</p>
+            </div>
+            <div class="modal-body">
+                <div class="project-section">
+                    <h3>Itzel Consulting & Recruitment</h3>
+                    <p>Built two websites for a UK education consulting business. They help international students find university programs. I used WordPress with Elementor, plus some custom HTML/CSS that I generated with Claude's help.</p>
+                </div>
+
+                <div class="project-section">
+                    <h3>Wellness Vibes by Hitakshi</h3>
+                    <p>Created a website for a wellness coach including a booking system, blog, and contact forms. Made sure everything works smoothly on phones and tablets.</p>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>What I learned</h4>
+                    <ul>
+                        <li>How to work with real clients and their feedback</li>
+                        <li>Making sites that actually work on mobile (most visitors use phones)</li>
+                        <li>Basic SEO so sites show up in Google searches</li>
+                        <li>Using AI to generate code snippets, then testing and fixing them myself</li>
+                    </ul>
+                </div>
+
+                <div class="modal-tags">
+                    <span class="tag">WordPress</span>
+                    <span class="tag">Elementor</span>
+                    <span class="tag">HTML/CSS</span>
+                    <span class="tag">Client Work</span>
+                </div>
+
+                <div class="modal-actions">
+                    <a href="https://itzelrecruitment.com/" target="_blank" class="btn btn-primary" onclick="event.stopPropagation()">
+                        🔗 View Itzel Site
+                    </a>
+                    <a href="https://wellnessvibesbyhitakshi.in/" target="_blank" class="btn btn-outline" onclick="event.stopPropagation()">
+                        🔗 View Wellness Site
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="pythonModal" class="modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <button class="modal-close" onclick="closeModal('python')">&times;</button>
+                <span class="modal-icon">📊</span>
+                <h2 class="modal-title">Data Analysis</h2>
+                <p class="modal-subtitle">Working with real data to answer real questions</p>
+            </div>
+            <div class="modal-body">
+                <div class="project-section">
+                    <h3>UK EV Infrastructure Analysis</h3>
+                    <p>For a class project, I analyzed UK government data on electric vehicles and charging stations. Used Python (Pandas for data, Matplotlib for charts) to figure out if the UK is ready for the 2030 ban on new petrol cars.</p>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>What I found</h4>
+                    <ul>
+                        <li>There are enough charging points overall across the UK</li>
+                        <li>But we need way more fast chargers - the slow ones won't cut it</li>
+                        <li>Big differences between regions (London vs rural areas)</li>
+                        <li>Learned how to actually USE data to make real recommendations</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h3>UK Visa Sponsorship Database</h3>
+                    <p>Built a database of 100+ UK companies that sponsor international students. Used ChatGPT and Claude to speed up research, then verified everything against the official UK government sponsor list. Organized by department, added salary info and graduate schemes.</p>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>Impact</h4>
+                    <ul>
+                        <li>200+ students at my university now use this to find jobs</li>
+                        <li>Saved everyone hours of research time</li>
+                        <li>Learned how to use AI to work faster (but still fact-check everything)</li>
+                    </ul>
+                </div>
+
+                <div class="modal-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Pandas</span>
+                    <span class="tag">Excel</span>
+                    <span class="tag">AI Research</span>
+                </div>
+
+                <div class="modal-actions">
+                    <a href="https://github.com/RajThakor-rgb/Portfolio/blob/main/Python.ipynb" target="_blank" class="btn btn-primary" onclick="event.stopPropagation()">
+                        💻 View Python Code
+                    </a>
+                    <a href="https://github.com/RajThakor-rgb/Portfolio/raw/59035646b91ce40cd0d7ed38da9e510e22ac7697/UK%20Visa%20Sponsorship%20Guide%20100%20Companies.xlsx" class="btn btn-outline" download onclick="event.stopPropagation()">
+                        📥 Download Database
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="aiModal" class="modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <button class="modal-close" onclick="closeModal('ai')">&times;</button>
+                <span class="modal-icon">🤖</span>
+                <h2 class="modal-title">AI & Automation</h2>
+                <p class="modal-subtitle">Using AI tools to solve real problems</p>
+            </div>
+            <div class="modal-body">
+                <div class="project-section">
+                    <h3>Job Application Tracker</h3>
+                    <p>Built an N8N workflow that takes a job posting URL, uses Google Gemini to extract all the details (company, role, salary, location), and automatically adds it to my Notion database. Cut my manual data entry time by 80%.</p>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>Why this matters</h4>
+                    <ul>
+                        <li>I was spending 5-10 minutes per job just copying info</li>
+                        <li>Now it takes 30 seconds - just paste the URL and go</li>
+                        <li>Learned how to connect different tools (N8N, Gemini, Notion API)</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h3>NGO Data Digitization</h3>
+                    <p>Spent a year digitizing handwritten records for an environmental NGO in India. 500+ pages of data. Used ChatGPT and Claude to help organize everything, then set up a Notion system for their team. Improved their reporting accuracy by 20%.</p>
+                </div>
+
+                <div class="project-section">
+                    <h3>My AI Philosophy</h3>
+                    <p>I use AI to learn faster and work smarter - not to replace thinking. ChatGPT helps me understand concepts quickly. Claude helps me write and edit. But I always test things myself, verify facts, and make the final decisions. AI is a tool, not a replacement for judgment.</p>
+                </div>
+
+                <div class="modal-tags">
+                    <span class="tag">N8N</span>
+                    <span class="tag">ChatGPT</span>
+                    <span class="tag">Claude</span>
+                    <span class="tag">Gemini</span>
+                    <span class="tag">Notion</span>
+                </div>
+
+                <div class="modal-actions">
+                    <a href="https://github.com/RajThakor-rgb/N8N-JobTracker" target="_blank" class="btn btn-primary" onclick="event.stopPropagation()">
+                        💻 View Automation Code
+                    </a>
+                    <a href="https://melodic-newt-99a.notion.site/Raj-s-Ultimate-Fitness-Guide-188623a8b0b780649cf2f27f61124229" target="_blank" class="btn btn-outline" onclick="event.stopPropagation()">
+                        📚 See Notion Example
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="project-mgmtModal" class="modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <button class="modal-close" onclick="closeModal('project-mgmt')">&times;</button>
+                <span class="modal-icon">📋</span>
+                <h2 class="modal-title">Project Management</h2>
+                <p class="modal-subtitle">Planning projects so things actually get done</p>
+            </div>
+            <div class="modal-body">
+                <div class="project-section">
+                    <h3>Healthcare System Project Plan</h3>
+                    <p>A friend in Brazil is building a hospital management system. I created a 77-day project timeline showing exactly what needs to happen and when - from initial setup all the way to launch. Broke everything down into phases with clear deliverables.</p>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>What I included</h4>
+                    <ul>
+                        <li>5 phases: Setup, Backend Development, Frontend, Testing, Deployment</li>
+                        <li>Two separate systems (hospital side and company side)</li>
+                        <li>Backup plans if things go wrong</li>
+                        <li>Launch strategy focusing on core features first</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h3>Startup Project Management System</h3>
+                    <p>Built a Notion workspace for an Indian tech startup to track all their projects and tasks. Created templates, set up workflows, and made sure everyone knows what they're responsible for and when things are due.</p>
+                </div>
+
+                <div class="modal-tags">
+                    <span class="tag">WBS</span>
+                    <span class="tag">Timeline Planning</span>
+                    <span class="tag">Notion</span>
+                    <span class="tag">International Work</span>
+                </div>
+
+                <div class="modal-actions">
+                    <a href="https://github.com/RajThakor-rgb/Portfolio/raw/59035646b91ce40cd0d7ed38da9e510e22ac7697/fast%20track%20timeline%2077days.pdf" class="btn btn-primary" download onclick="event.stopPropagation()">
+                        📄 View Timeline PDF
+                    </a>
+                    <a href="https://fluff-color-209.notion.site/IT-Project-Work-Breakdown-Structure-2d8f34d2694981ab8f7bc74476178e45" target="_blank" class="btn btn-outline" onclick="event.stopPropagation()">
+                        🔗 View Notion System
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="businessModal" class="modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <button class="modal-close" onclick="closeModal('business')">&times;</button>
+                <span class="modal-icon">💼</span>
+                <h2 class="modal-title">Business Skills</h2>
+                <p class="modal-subtitle">Research, analysis, and process improvement</p>
+            </div>
+            <div class="modal-body">
+                <div class="project-section">
+                    <h3>What I've learned through my degree</h3>
+                    <p>My MSc has involved a lot of real business analysis - studying actual companies, figuring out competitive strategies, understanding how to implement AI in different industries, and analyzing what makes businesses succeed or fail.</p>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>Skills I've developed</h4>
+                    <ul>
+                        <li>Researching markets and understanding competition</li>
+                        <li>Organizing messy data into something useful</li>
+                        <li>Finding ways to improve processes and save time</li>
+                        <li>Understanding business ethics and decision-making</li>
+                        <li>Training team members on new tools and systems</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h3>Real example: UK Employer Research</h3>
+                    <p>When I research companies for students, I look at: company size, what they actually do, their graduate programs, typical salaries, locations, and whether they sponsor visas. Then I organize everything so students can find what they need in seconds instead of hours.</p>
+                </div>
+
+                <div class="modal-tags">
+                    <span class="tag">Market Research</span>
+                    <span class="tag">Data Organization</span>
+                    <span class="tag">Process Improvement</span>
+                    <span class="tag">Training</span>
+                </div>
+
+                <div class="modal-actions">
+                    <a href="#academic" class="btn btn-primary" onclick="event.stopPropagation()">
+                        📚 See Academic Work
+                    </a>
+                    <a href="#projects" class="btn btn-outline" onclick="event.stopPropagation()">
+                        🔗 View All Projects
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="soft-skillsModal" class="modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <button class="modal-close" onclick="closeModal('soft-skills')">&times;</button>
+                <span class="modal-icon">🎯</span>
+                <h2 class="modal-title">Leadership Experience</h2>
+                <p class="modal-subtitle">Managing teams and getting things done</p>
+            </div>
+            <div class="modal-body">
+                <div class="project-section">
+                    <h3>Team Management</h3>
+                    <p>As Student Manager at Pittsburg State, I managed a team of 8 people. I did hiring interviews, trained new staff, handled scheduling, and dealt with problems when they came up. Learned that managing people is way harder than managing tasks - but also more rewarding.</p>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>What I learned about leadership</h4>
+                    <ul>
+                        <li>Clear communication saves everyone time and stress</li>
+                        <li>Different people need different kinds of support</li>
+                        <li>Small problems become big ones if you ignore them</li>
+                        <li>Good systems make everyone's job easier</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h3>Public Speaking & Presentations</h3>
+                    <p>As a Graduate Assistant, I gave presentations to 200+ prospective students explaining degree programs. Had to answer tough questions on the spot and make complex information easy to understand. Got over my fear of public speaking pretty quickly.</p>
+                </div>
+
+                <div class="project-section">
+                    <h3>Working Across Cultures</h3>
+                    <p>I've worked in India, USA, and UK with teams and clients from all over. From India, studied and worked in the USA for 7 years, now in the UK. I've learned to adapt to different communication styles and work across time zones.</p>
+                </div>
+
+                <div class="modal-tags">
+                    <span class="tag">Team Management</span>
+                    <span class="tag">Public Speaking</span>
+                    <span class="tag">Cross-Cultural Work</span>
+                    <span class="tag">Problem-Solving</span>
+                </div>
+
+                <div class="modal-actions">
+                    <a href="#experience" class="btn btn-primary" onclick="event.stopPropagation()">
+                        💼 See Full Experience
+                    </a>
+                    <a href="https://github.com/RajThakor-rgb/Portfolio/raw/main/Thakor_Raj_CV.pdf" class="btn btn-outline" download onclick="event.stopPropagation()">
+                        📄 Download CV
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
+        function openModal(modalName) {
+            const modal = document.getElementById(modalName + 'Modal');
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal(modalName) {
+            const modal = document.getElementById(modalName + 'Modal');
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Close modal when clicking outside
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+
         function toggleMenu() {
             const menu = document.getElementById('navMenu');
             menu.classList.toggle('active');
         }
+
+        // Close modal on ESC key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const activeModals = document.querySelectorAll('.modal.active');
+                activeModals.forEach(modal => {
+                    modal.classList.remove('active');
+                });
+                document.body.style.overflow = 'auto';
+            }
+        });
 
         // Close mobile menu when clicking a link
         document.querySelectorAll('nav ul li a').forEach(link => {
             link.addEventListener('click', function() {
                 const menu = document.getElementById('navMenu');
                 menu.classList.remove('active');
-            });
-        });
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
             });
         });
     </script>
