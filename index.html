@@ -89,7 +89,7 @@
         .hero {
             background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
             color: white;
-            padding: 140px 20px 120px; /* FIX: Increased bottom padding to prevent overlap with Skills section */
+            padding: 140px 20px 120px; /* FIX: Increased bottom padding to prevent overlap */
             position: relative;
             overflow: hidden;
             margin-top: 65px;
@@ -1046,9 +1046,12 @@
                 <a href="https://github.com/RajThakor-rgb/Portfolio/raw/main/Thakor_Raj_CV.pdf" class="btn btn-primary" download>
                     📄 Download CV
                 </a>
-                <a href="#skills" class="btn btn-outline">
+                
+                <!-- UPDATED: This button now opens the 'all-skills' popup -->
+                <button onclick="openModal('all-skills')" class="btn btn-outline" style="color: white; border-color: white;">
                     💼 View Skills
-                </a>
+                </button>
+                
                 <a href="#contact" class="btn btn-outline">
                     📧 Get In Touch
                 </a>
@@ -1179,7 +1182,7 @@
                         <h3 class="project-title">Client Websites</h3>
                     </div>
                 </div>
-                <p class="project-description">Built a professional website for a UK education consulting business and one for a wellness coach. Used WordPress with custom HTML/CSS (generated with AI help). All sites work perfectly on mobile and desktop.</p>
+                <p class="project-description">Built two professional websites for a UK education consulting business and one for a wellness coach. Used WordPress with custom HTML/CSS (generated with AI help). All sites work perfectly on mobile and desktop.</p>
                 <div class="project-tags">
                     <span class="project-tag">WordPress</span>
                     <span class="project-tag">Elementor</span>
@@ -1416,7 +1419,7 @@
 
             <div style="margin-top: 32px;">
                 <h3 style="font-size: 1.4rem; color: var(--text-dark); margin-bottom: 16px; font-weight: 600;">Completed - Term 1</h3>
-                <span class="semester-label">June - October 2025</span>
+                <span class="semester-label">September - December 2025</span>
                 
                 <div class="modules-grid">
                     <div class="module-card">
@@ -1436,7 +1439,7 @@
 
             <div style="margin-top: 48px;">
                 <h3 style="font-size: 1.4rem; color: var(--text-dark); margin-bottom: 16px; font-weight: 600;">Completed - Term 2</h3>
-                <span class="semester-label">October - February 2026</span>
+                <span class="semester-label">January - April 2026</span>
                 
                 <div class="modules-grid">
                     <div class="module-card">
@@ -1456,7 +1459,7 @@
 
             <div style="margin-top: 48px;">
                 <h3 style="font-size: 1.4rem; color: var(--text-dark); margin-bottom: 16px; font-weight: 600;">Coming Up - Term 3</h3>
-                <span class="semester-label">February - June 2026</span>
+                <span class="semester-label">May - August 2026</span>
                 
                 <div class="modules-grid">
                     <div class="module-card">
@@ -1515,7 +1518,6 @@
             <p>Looking for graduate analyst roles in the UK (Summer/Autumn 2026). If you're hiring someone who can analyze data, solve problems, and learn quickly, let's talk.</p>
             
             <div class="contact-links">
-                <!-- FIX: Replaced broken Cloudflare email link with a working mailto link -->
                 <a href="mailto:contact@rajthakor.com" class="contact-link">
                     📧 Email Me
                 </a>
@@ -1552,7 +1554,7 @@
             <div class="modal-body">
                 <div class="project-section">
                     <h3>Itzel Consulting & Recruitment</h3>
-                    <p>Built a website for a UK education consulting business. They help international students find university programs. I used WordPress with Elementor, plus some custom HTML/CSS that I generated with Claude's help.</p>
+                    <p>Built two websites for a UK education consulting business. They help international students find university programs. I used WordPress with Elementor, plus some custom HTML/CSS that I generated with Claude's help.</p>
                 </div>
 
                 <div class="project-section">
@@ -1581,11 +1583,8 @@
                     <a href="https://itzelrecruitment.com/" target="_blank" class="btn btn-primary" onclick="event.stopPropagation()">
                         🔗 View Itzel Site
                     </a>
-                    <a href="https://wellnessvibesbyhitakshi.in/" target="_blank" class="btn btn-primary" onclick="event.stopPropagation()">
+                    <a href="https://wellnessvibesbyhitakshi.in/" target="_blank" class="btn btn-outline" onclick="event.stopPropagation()">
                         🔗 View Wellness Site
-                    </a>
-                    <a href="https://melodic-newt-99a.notion.site/Raj-s-Ultimate-Fitness-Guide-188623a8b0b780649cf2f27f61124229" target="_blank" class="btn btn-primary" onclick="event.stopPropagation()">
-                        🔗 View Fitness Guide
                     </a>
                 </div>
             </div>
@@ -1641,7 +1640,7 @@
                     <a href="https://github.com/RajThakor-rgb/Portfolio/blob/main/Python.ipynb" target="_blank" class="btn btn-primary" onclick="event.stopPropagation()">
                         💻 View Python Code
                     </a>
-                    <a href="https://github.com/RajThakor-rgb/Portfolio/raw/59035646b91ce40cd0d7ed38da9e510e22ac7697/UK%20Visa%20Sponsorship%20Guide%20100%20Companies.xlsx" class="btn btn-primary" download onclick="event.stopPropagation()">
+                    <a href="https://github.com/RajThakor-rgb/Portfolio/raw/59035646b91ce40cd0d7ed38da9e510e22ac7697/UK%20Visa%20Sponsorship%20Guide%20100%20Companies.xlsx" class="btn btn-outline" download onclick="event.stopPropagation()">
                         📥 Download Database
                     </a>
                 </div>
@@ -1739,7 +1738,7 @@
                     <a href="https://github.com/RajThakor-rgb/Portfolio/raw/59035646b91ce40cd0d7ed38da9e510e22ac7697/fast%20track%20timeline%2077days.pdf" class="btn btn-primary" download onclick="event.stopPropagation()">
                         📄 View Timeline PDF
                     </a>
-                    <a href="https://fluff-color-209.notion.site/IT-Project-Work-Breakdown-Structure-2d8f34d2694981ab8f7bc74476178e45" target="_blank" class="btn btn-primary" onclick="event.stopPropagation()">
+                    <a href="https://fluff-color-209.notion.site/IT-Project-Work-Breakdown-Structure-2d8f34d2694981ab8f7bc74476178e45" target="_blank" class="btn btn-outline" onclick="event.stopPropagation()">
                         🔗 View Notion System
                     </a>
                 </div>
@@ -1830,130 +1829,132 @@
             </div>
         </div>
     </div>
-    <!-- Complete Skills A-Z Modal -->
-<div id="all-skillsModal" class="modal">
-    <div class="modal-container">
-        <div class="modal-header">
-            <!-- Close Symbol (Top Right) -->
-            <button class="modal-close" onclick="closeModal('all-skills')">&times;</button>
-            
-            <span class="modal-icon">🛠️</span>
-            <h2 class="modal-title">Complete Skillset</h2>
-            <!-- Subheading removed as requested -->
-        </div>
-        
-        <div class="modal-body">
-            <!-- Responsive Grid -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-                
-                <!-- Column 1 -->
-                <ul style="list-style: none; padding: 0; margin: 0;">
-                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
-                        <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Agile Basics
-                    </li>
-                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
-                        <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Basic API Integration
-                    </li>
-                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
-                        <span style="color: var(--gradient-start); margin-right: 8px;">•</span>ChatGPT, Claude & Perplexity AI
-                    </li>
-                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
-                        <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Cross-Cultural Communication
-                    </li>
-                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
-                        <span style="color: var(--gradient-start); margin-right: 8px;">•</span>CSS
-                    </li>
-                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
-                        <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Data Analysis & Visualisation
-                    </li>
-                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
-                        <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Data Digitisation
-                    </li>
-                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
-                        <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Data Organisation
-                    </li>
-                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
-                        <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Excel (Pivot Tables, Macros)
-                    </li>
-                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
-                        <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Google Gemini
-                    </li>
-                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
-                        <span style="color: var(--gradient-start); margin-right: 8px;">•</span>HTML
-                    </li>
-                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
-                        <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Hiring & Performance Management
-                    </li>
-                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
-                        <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Knowledge Management (Notion)
-                    </li>
-                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
-                        <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Leadership
-                    </li>
-                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
-                        <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Market Research
-                    </li>
-                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
-                        <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Matplotlib (Python)
-                    </li>
-                </ul>
 
-                <!-- Column 2 -->
-                <ul style="list-style: none; padding: 0; margin: 0;">
-                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
-                        <span style="color: var(--gradient-start); margin-right: 8px;">•</span>N8N Workflows
-                    </li>
-                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
-                        <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Notion AI
-                    </li>
-                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
-                        <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Pandas (Python)
-                    </li>
-                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
-                        <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Process Improvement
-                    </li>
-                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
-                        <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Problem-Solving
-                    </li>
-                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
-                        <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Prompt Engineering
-                    </li>
-                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
-                        <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Public Speaking
-                    </li>
-                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
-                        <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Python
-                    </li>
-                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
-                        <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Responsive Design
-                    </li>
-                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
-                        <span style="color: var(--gradient-start); margin-right: 8px;">•</span>SEO Basics
-                    </li>
-                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
-                        <span style="color: var(--gradient-start); margin-right: 8px;">•</span>SQL Basics
-                    </li>
-                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
-                        <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Staff Management
-                    </li>
-                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
-                        <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Team Training
-                    </li>
-                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
-                        <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Timeline Planning (WBS)
-                    </li>
-                    <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
-                        <span style="color: var(--gradient-start); margin-right: 8px;">•</span>WordPress & Elementor
-                    </li>
-                    <!-- Languages added at the end for clarity -->
-                    <li style="padding: 15px 0 0 0; border-bottom: none; font-size: 0.9rem; color: var(--text-light); margin-top: 10px;">
-                        <strong>Languages:</strong> English, Hindi, Gujarati (Fluent)
-                    </li>
-                </ul>
+    <!-- NEW: Complete Skills A-Z Modal -->
+    <div id="all-skillsModal" class="modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <!-- Close Symbol (Top Right) -->
+                <button class="modal-close" onclick="closeModal('all-skills')">&times;</button>
+                
+                <span class="modal-icon">🛠️</span>
+                <h2 class="modal-title">Complete Skillset</h2>
+                <!-- Subheading removed as requested -->
+            </div>
+            
+            <div class="modal-body">
+                <!-- Responsive Grid -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                    
+                    <!-- Column 1 -->
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
+                            <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Agile Basics
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
+                            <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Basic API Integration
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
+                            <span style="color: var(--gradient-start); margin-right: 8px;">•</span>ChatGPT, Claude & Perplexity AI
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
+                            <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Cross-Cultural Communication
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
+                            <span style="color: var(--gradient-start); margin-right: 8px;">•</span>CSS
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
+                            <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Data Analysis & Visualisation
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
+                            <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Data Digitisation
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
+                            <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Data Organisation
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
+                            <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Excel (Pivot Tables, Macros)
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
+                            <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Google Gemini
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
+                            <span style="color: var(--gradient-start); margin-right: 8px;">•</span>HTML
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
+                            <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Hiring & Performance Management
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
+                            <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Knowledge Management (Notion)
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
+                            <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Leadership
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
+                            <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Market Research
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
+                            <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Matplotlib (Python)
+                        </li>
+                    </ul>
+
+                    <!-- Column 2 -->
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
+                            <span style="color: var(--gradient-start); margin-right: 8px;">•</span>N8N Workflows
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
+                            <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Notion AI
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
+                            <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Pandas (Python)
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
+                            <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Process Improvement
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
+                            <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Problem-Solving
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
+                            <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Prompt Engineering
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
+                            <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Public Speaking
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
+                            <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Python
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
+                            <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Responsive Design
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
+                            <span style="color: var(--gradient-start); margin-right: 8px;">•</span>SEO Basics
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
+                            <span style="color: var(--gradient-start); margin-right: 8px;">•</span>SQL Basics
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
+                            <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Staff Management
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
+                            <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Team Training
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
+                            <span style="color: var(--gradient-start); margin-right: 8px;">•</span>Timeline Planning (WBS)
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; color: var(--text-dark);">
+                            <span style="color: var(--gradient-start); margin-right: 8px;">•</span>WordPress & Elementor
+                        </li>
+                        <!-- Languages added at the end for clarity -->
+                        <li style="padding: 15px 0 0 0; border-bottom: none; font-size: 0.9rem; color: var(--text-light); margin-top: 10px;">
+                            <strong>Languages:</strong> English, Hindi, Gujarati (Fluent)
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-</div>
+
     <script>
         function openModal(modalName) {
             const modal = document.getElementById(modalName + 'Modal');
@@ -1997,7 +1998,7 @@
             }
         });
 
-        // FIX: Completed the truncated script that closes the mobile menu when a link is clicked
+        // Close mobile menu when clicking a link
         document.querySelectorAll('nav ul li a').forEach(link => {
             link.addEventListener('click', function() {
                 const menu = document.getElementById('navMenu');
@@ -2009,6 +2010,3 @@
     </script>
 </body>
 </html>
-
-
-
