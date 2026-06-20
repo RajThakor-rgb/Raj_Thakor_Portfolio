@@ -145,6 +145,26 @@ section{position:relative;z-index:1}
 .exp-ul li strong{color:var(--text);font-weight:500}
 .exp-tags{display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:1.5rem}
 
+/* VOLUNTEERING */
+.vol-section{margin-top:4rem;padding-top:3rem;border-top:1px solid var(--border)}
+.vol-subhead{font-family:var(--font-mono);font-size:0.78rem;letter-spacing:0.16em;color:var(--accent);text-transform:uppercase;display:flex;align-items:center;gap:0.7rem;margin-bottom:1.6rem}
+.vol-subhead::before{content:'';display:inline-block;width:20px;height:1px;background:var(--accent)}
+.vol-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:1.2rem}
+.vol-card{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:1.7rem 1.8rem;transition:border-color 0.3s,transform 0.3s;position:relative;overflow:hidden}
+.vol-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--accent);opacity:0;transition:opacity 0.3s}
+.vol-card:hover{border-color:var(--border2);transform:translateY(-2px)}
+.vol-card:hover::before{opacity:1}
+.vol-meta{display:flex;align-items:center;gap:0.8rem;flex-wrap:wrap;margin-bottom:0.9rem}
+.vol-tag{font-family:var(--font-mono);font-size:0.66rem;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;padding:0.28rem 0.65rem;background:rgba(0,212,255,0.07);border:1px solid rgba(0,212,255,0.18);border-radius:3px}
+.vol-date{font-family:var(--font-mono);font-size:0.74rem;color:var(--text3)}
+.vol-role{font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:var(--text);letter-spacing:-0.01em;margin-bottom:0.3rem}
+.vol-org{font-family:var(--font-mono);font-size:0.86rem;color:var(--accent);margin-bottom:1rem}
+.vol-ul{list-style:none;margin-top:0.5rem;margin-bottom:1rem}
+.vol-ul li{position:relative;padding-left:1.4rem;margin-bottom:0.6rem;font-size:0.94rem;color:var(--text2);line-height:1.6}
+.vol-ul li::before{content:'→';position:absolute;left:0;color:var(--accent);font-family:var(--font-mono);font-size:0.78rem}
+.vol-ul li strong{color:var(--text);font-weight:500}
+.vol-tags{display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:1rem}
+
 /* SKILLS */
 .skills{padding:6rem 0}
 .skills-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-top:3rem}
@@ -561,6 +581,41 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:1.6rem 2.
             <li>Learned that accurate data is everything in a fast-paced operations environment</li>
           </ul>
           <div class="exp-tags"><span class="stk">Inventory DB</span><span class="stk">Process Improvement</span><span class="stk">Data Accuracy</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="vol-section reveal">
+      <div class="vol-subhead">Volunteering</div>
+      <div class="vol-grid">
+        <div class="vol-card">
+          <div class="vol-meta">
+            <span class="vol-tag">Volunteer · Unpaid</span>
+            <span class="vol-date">2026 – Present · Remote</span>
+          </div>
+          <div class="vol-role">Volunteer AI Consultant</div>
+          <div class="vol-org">Saha · New Zealand</div>
+          <ul class="vol-ul">
+            <li>Advising an early-stage NZ education startup on its <strong>AI literacy programme</strong> (pro bono)</li>
+            <li>Designed a pilot AI literacy programme for a primary-school AI club: <strong>15 sections</strong>, mapped to UNESCO AI competency frameworks, compliant with NZ Privacy Act 2020, with Te Tiriti o Waitangi considerations</li>
+            <li>Delivered market research, a consulting agreement template, and the initial concept document</li>
+            <li>~20 hours across four deliverables to date</li>
+          </ul>
+          <div class="vol-tags"><span class="stk">AI Literacy</span><span class="stk">Programme Design</span><span class="stk">Market Research</span><span class="stk">EdTech</span></div>
+        </div>
+        <div class="vol-card">
+          <div class="vol-meta">
+            <span class="vol-tag">Volunteer · Community</span>
+            <span class="vol-date">Sep 2019 – Dec 2020 · Kansas, USA</span>
+          </div>
+          <div class="vol-role">Social Worker</div>
+          <div class="vol-org">Student Government Association · Pittsburg State University</div>
+          <ul class="vol-ul">
+            <li>Monthly food distribution with local churches and community outreach</li>
+            <li>Waste segregation and recycling support with the SEK Recycling Center</li>
+            <li>Organised fundraisers in partnership with national food chains (Chili's, Freddy's, Mazzio's)</li>
+          </ul>
+          <div class="vol-tags"><span class="stk">Community</span><span class="stk">Fundraising</span><span class="stk">Outreach</span></div>
         </div>
       </div>
     </div>
