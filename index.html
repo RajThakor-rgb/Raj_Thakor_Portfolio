@@ -258,6 +258,31 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:1.6rem 2.
 .hero-3d-pill{font-family:var(--font-mono);font-size:0.8rem;letter-spacing:0.08em;color:var(--text2);padding:0.35rem 0.85rem;background:rgba(8,10,14,0.7);backdrop-filter:blur(8px);border:1px solid var(--border2);border-radius:3rem;display:inline-flex;align-items:center;gap:0.4rem}
 .hero-3d-dot{width:5px;height:5px;border-radius:50%;background:var(--green);box-shadow:0 0 6px var(--green)}
 
+/* HERO v2 — credentials + in-hero proof bar */
+.hero-cred-row{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.5rem;animation:fadeUp 0.6s ease both}
+.hcr-chip{font-family:var(--font-mono);font-size:0.74rem;color:var(--text2);letter-spacing:0.05em;padding:0.42rem 0.85rem;background:rgba(255,255,255,0.02);border:1px solid var(--border2);border-radius:3rem;display:inline-flex;align-items:center;gap:0.45rem}
+.hcr-chip.hcr-role{color:var(--accent);background:rgba(0,212,255,0.05);border-color:rgba(0,212,255,0.18)}
+.hcr-chip.hcr-avail{color:var(--green);background:rgba(0,229,160,0.05);border-color:rgba(0,229,160,0.18)}
+.hcr-chip.hcr-avail::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 6px var(--green);animation:pulse 2.5s infinite}
+.hero-pitch{font-size:1.25rem;font-weight:300;color:var(--text2);line-height:1.65;margin-top:1.6rem;max-width:540px;animation:fadeUp 0.6s 0.2s ease both}
+.hero-pitch strong{color:var(--text);font-weight:500}
+.hero-proof{display:grid;grid-template-columns:repeat(2,1fr);gap:0.7rem;margin-top:1.9rem;max-width:540px;animation:fadeUp 0.6s 0.3s ease both}
+.hp-item{display:flex;align-items:center;gap:0.9rem;padding:0.85rem 1.1rem;background:rgba(0,212,255,0.035);border:1px solid var(--border);border-radius:6px;transition:border-color 0.3s,background 0.3s,transform 0.3s}
+.hp-item:hover{border-color:rgba(0,212,255,0.3);background:rgba(0,212,255,0.06);transform:translateY(-1px)}
+.hp-num{font-family:var(--font-display);font-size:1.45rem;font-weight:700;color:var(--accent);line-height:1;min-width:55px;flex-shrink:0}
+.hp-num.is-icon{font-size:1.4rem;color:var(--amber)}
+.hp-lbl{font-family:var(--font-mono);font-size:0.78rem;color:var(--text2);line-height:1.4}
+
+/* WORKFLOW DIAGRAM (Job Tracker card) */
+.wflow-wrap{margin:0.5rem 0 1.2rem;padding:1rem 0.4rem;background:rgba(0,212,255,0.025);border:1px solid var(--border);border-radius:6px}
+.wflow{width:100%;height:auto;display:block;max-height:120px}
+.wflow text{font-family:'DM Mono',monospace}
+.wflow .wn-rect{fill:rgba(0,212,255,0.06);stroke:rgba(0,212,255,0.45);stroke-width:1}
+.wflow .wn-rect.wn-out{fill:rgba(0,229,160,0.07);stroke:rgba(0,229,160,0.45)}
+.wflow .we{stroke:rgba(0,212,255,0.35);stroke-width:1;stroke-dasharray:3,3}
+.wflow .wp{fill:#00d4ff;filter:drop-shadow(0 0 4px #00d4ff)}
+.wflow .wp-out{fill:#00e5a0;filter:drop-shadow(0 0 4px #00e5a0)}
+
 /* BENTO — BUILDS */
 .builds-bento{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:minmax(195px,auto);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-top:2.5rem}
 .bs-large{grid-column:span 4;grid-row:span 2;background:var(--bg2);display:grid;grid-template-columns:1fr 1fr;gap:1.8rem;align-items:center}
@@ -312,6 +337,9 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:1.6rem 2.
   .nav-links a{padding:0.75rem 2rem;font-size:0.85rem}
   .hero-inner{grid-template-columns:1fr}.hero-right{display:none}
   .hero-stats{grid-template-columns:repeat(2,1fr)}
+  .hero-proof{grid-template-columns:1fr;max-width:none}
+  .hero-cred-row{justify-content:flex-start}
+  .hero-pitch{max-width:none}
   .builds-grid{grid-template-columns:1fr}
   .bc.feat{grid-column:span 1;grid-template-columns:1fr}
   .builds-bento{grid-template-columns:1fr;grid-auto-rows:auto}
@@ -362,15 +390,36 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:1.6rem 2.
 
   <div class="hero-inner">
     <div class="hero-left">
-      <div class="hero-badge"><span class="badge-dot"></span>Available — Summer / Autumn 2026</div>
+      <div class="hero-cred-row">
+        <span class="hcr-chip hcr-role">AI &amp; Automation Consultant</span>
+        <span class="hcr-chip">MSc AI for Business · ULaw London</span>
+        <span class="hcr-chip hcr-avail">Available Summer 2026</span>
+      </div>
       <h1 class="hero-h1">
         <span class="l1">I find gaps.</span>
         <span class="l2">I build the fix.</span>
       </h1>
-      <p class="hero-sub">
-        AI &amp; Automation Consultant finishing an <strong>MSc in AI for Business</strong> at University of Law, London.
-        I don't just know the theory — I ship real things: platforms, workflows, tools, client sites. Across three countries.
+      <p class="hero-pitch">
+        I don't just know AI — I <strong>ship things with it</strong>. Platforms, automations, client sites. Across three countries.
       </p>
+      <div class="hero-proof">
+        <div class="hp-item">
+          <div class="hp-num">200+</div>
+          <div class="hp-lbl">Students using my UK visa DB</div>
+        </div>
+        <div class="hp-item">
+          <div class="hp-num">65+</div>
+          <div class="hp-lbl">AI tools curated on SwipeUp</div>
+        </div>
+        <div class="hp-item">
+          <div class="hp-num">₹50L</div>
+          <div class="hp-lbl">Investor pitch as Kynamatix COO</div>
+        </div>
+        <div class="hp-item">
+          <div class="hp-num is-icon">🏆</div>
+          <div class="hp-lbl">Runner-up · Birmingham 2026</div>
+        </div>
+      </div>
       <div class="hero-actions">
         <a href="https://github.com/RajThakor-rgb/Portfolio/raw/main/Thakor_Raj_CV.pdf" class="btn-p" download>↓ Download CV</a>
         <a href="#builds" class="btn-g">View my work →</a>
@@ -387,13 +436,6 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:1.6rem 2.
         </div>
       </div>
     </div>
-  </div>
-
-  <div class="hero-stats container" style="padding:0 2.5rem">
-    <div class="h-stat reveal"><div class="h-stat-n">200+</div><div class="h-stat-l">Students using my visa DB</div></div>
-    <div class="h-stat reveal rd1"><div class="h-stat-n">65+</div><div class="h-stat-l">AI tools curated on SwipeUp</div></div>
-    <div class="h-stat reveal rd2"><div class="h-stat-n">80%</div><div class="h-stat-l">Data entry cut by automation</div></div>
-    <div class="h-stat reveal rd3"><div class="h-stat-n">3</div><div class="h-stat-l">Countries worked across</div></div>
   </div>
 </section>
 
@@ -471,9 +513,38 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:1.6rem 2.
       </div>
 
       <div class="bc bs-third reveal">
-        <div class="btag tbuilt">Automation</div>
+        <div class="btag tbuilt">Automation · Live</div>
         <h3 class="bc-h3">Job Application Tracker</h3>
-        <p class="bc-desc">Paste a job URL. N8N grabs it, Gemini extracts role/company/salary/location, Notion updates automatically. Cut data entry time by 80%.</p>
+        <div class="wflow-wrap">
+          <svg viewBox="0 0 320 90" class="wflow" xmlns="http://www.w3.org/2000/svg" aria-label="N8N to Gemini to Notion workflow">
+            <line class="we" x1="80" y1="45" x2="120" y2="45"/>
+            <line class="we" x1="200" y1="45" x2="240" y2="45"/>
+            <g>
+              <rect class="wn-rect" x="0" y="20" width="80" height="50" rx="6"/>
+              <text x="40" y="42" text-anchor="middle" fill="#e8eaf0" font-size="11" font-weight="600">N8N</text>
+              <text x="40" y="58" text-anchor="middle" fill="#8b92a5" font-size="9">URL in</text>
+            </g>
+            <g>
+              <rect class="wn-rect" x="120" y="20" width="80" height="50" rx="6"/>
+              <text x="160" y="42" text-anchor="middle" fill="#e8eaf0" font-size="11" font-weight="600">Gemini</text>
+              <text x="160" y="58" text-anchor="middle" fill="#8b92a5" font-size="9">extract</text>
+            </g>
+            <g>
+              <rect class="wn-rect wn-out" x="240" y="20" width="80" height="50" rx="6"/>
+              <text x="280" y="42" text-anchor="middle" fill="#e8eaf0" font-size="11" font-weight="600">Notion</text>
+              <text x="280" y="58" text-anchor="middle" fill="#8b92a5" font-size="9">logged</text>
+            </g>
+            <circle class="wp" r="3.5" cy="45">
+              <animate attributeName="cx" values="82;118;82" dur="1.4s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0;1;0" dur="1.4s" repeatCount="indefinite"/>
+            </circle>
+            <circle class="wp-out" r="3.5" cy="45">
+              <animate attributeName="cx" values="202;238;202" dur="1.4s" begin="0.55s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0;1;0" dur="1.4s" begin="0.55s" repeatCount="indefinite"/>
+            </circle>
+          </svg>
+        </div>
+        <p class="bc-desc">Paste a job URL. <strong>N8N</strong> grabs it, <strong>Gemini</strong> extracts role/company/salary, <strong>Notion</strong> logs automatically. <strong>80% time saved.</strong></p>
         <div class="bc-stack"><span class="stk">N8N</span><span class="stk">Google Gemini</span><span class="stk">Notion API</span></div>
         <a href="https://github.com/RajThakor-rgb/N8N-JobTracker/" target="_blank" class="bc-link">View on GitHub →</a>
       </div>
@@ -612,6 +683,28 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:1.6rem 2.
           <div class="cert-title">AI Literacy for All</div>
           <div class="cert-date">Apr 2026 · ID dyh9twqqpq</div>
         </div>
+        <div class="cert-card">
+          <div class="cert-issuer">LinkedIn Learning</div>
+          <div class="cert-title">Everyday AI Concepts</div>
+          <div class="cert-date">Dec 2025</div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-issuer">LinkedIn Learning</div>
+          <div class="cert-title">Everyday AI Business Tools</div>
+          <div class="cert-date">Dec 2025</div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-issuer">LinkedIn Learning</div>
+          <div class="cert-title">Business Development Foundations</div>
+          <div class="cert-date">Dec 2025</div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-issuer">CITI Program</div>
+          <div class="cert-title">Social-Behavioral-Educational PI/RA</div>
+          <div class="cert-date">Nov 2023 — Nov 2026</div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 <!-- EXPERIENCE -->
@@ -961,7 +1054,7 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
     });
   }
 
-  let rot = 0, mx = 0, my = 0, cRot = 0, cTilt = -0.35;
+  let rot = -Math.PI*0.5, mx = 0, my = 0, cRot = -Math.PI*0.5, cTilt = -0.35;
   window.addEventListener('mousemove', e => {
     const r = canvas.getBoundingClientRect();
     mx = ((e.clientX - r.left)/r.width - 0.5);
@@ -978,7 +1071,7 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
     const y2 = y*cT - z*sT;
     const z2 = y*sT + z*cT;
     const persp = 2.4 / (2.4 + z2 * 0.85);
-    return {sx:cx + x*R*scale*persp, sy:cy + y2*R*scale*persp, z:z2, depth:persp};
+    return {sx:cx + x*R*scale*persp, sy:cy - y2*R*scale*persp, z:z2, depth:persp};
   }
 
   // Load land outline (GeoJSON via jsDelivr-mirrored GitHub).
@@ -1023,7 +1116,7 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
       const data = offCtx.getImageData(0,0,W,H).data;
 
       // Sample sphere -> keep land only
-      const N = 4200;
+      const N = 8500;
       const pts = [];
       for(let i=0;i<N;i++){
         const phi = Math.acos(1 - 2*(i+0.5)/N);
@@ -1098,7 +1191,7 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
       let first = true;
       for(let lon=-180; lon<=180; lon+=8){
         const p = project(ll(lat,lon));
-        if(p.z < -0.05) { first = true; continue; }
+        if(p.z > 0.02) { first = true; continue; }
         if(first){ ctx.moveTo(p.sx, p.sy); first = false; }
         else ctx.lineTo(p.sx, p.sy);
       }
@@ -1109,22 +1202,23 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
       let first = true;
       for(let lat=-85; lat<=85; lat+=8){
         const p = project(ll(lat,lon));
-        if(p.z < -0.05) { first = true; continue; }
+        if(p.z > 0.02) { first = true; continue; }
         if(first){ ctx.moveTo(p.sx, p.sy); first = false; }
         else ctx.lineTo(p.sx, p.sy);
       }
       ctx.stroke();
     }
 
-    // Land dots (recognisable continents)
+    // Land dots (recognisable continents) — front-facing only
     if(landPoints){
       for(const p of landPoints){
         const pp = project(p);
-        if(pp.z < -0.05) continue;
-        const a = Math.max(0, (pp.z + 0.3)) * 1.0;
-        ctx.fillStyle = 'rgba(0,212,255,' + Math.min(1, a).toFixed(3) + ')';
+        if(pp.z > 0.02) continue; // back face: z>0 in this perspective
+        // brightness peaks for points closest to camera (most negative z)
+        const a = Math.max(0.15, Math.min(1, 0.6 - pp.z));
+        ctx.fillStyle = 'rgba(0,212,255,' + a.toFixed(3) + ')';
         ctx.beginPath();
-        ctx.arc(pp.sx, pp.sy, 0.7 + a*0.8, 0, Math.PI*2);
+        ctx.arc(pp.sx, pp.sy, 0.85 + a*0.9, 0, Math.PI*2);
         ctx.fill();
       }
     }
@@ -1133,8 +1227,8 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
     const pulse = 1 + Math.sin(t * 0.0024) * 0.35;
     for(const m of markers){
       const pm = project(m, 1.02);
-      if(pm.z < -0.15) continue;
-      const a = Math.max(0.45, pm.z + 0.5);
+      if(pm.z > 0.15) continue; // back face: positive z is behind
+      const a = Math.max(0.55, -pm.z + 0.5);
       ctx.fillStyle = 'rgba(0,229,160,' + (a*0.22).toFixed(3) + ')';
       ctx.beginPath();
       ctx.arc(pm.sx, pm.sy, 11 * pulse, 0, Math.PI*2);
