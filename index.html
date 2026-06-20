@@ -119,6 +119,7 @@ section{position:relative;z-index:1}
 .tclient{background:rgba(245,166,35,0.08);color:var(--amber);border:1px solid rgba(245,166,35,0.15)}
 .bc-h3{font-family:var(--font-display);font-size:1.72rem;font-weight:700;letter-spacing:-0.02em;color:var(--text);margin-bottom:0.6rem;line-height:1.2}
 .bc-desc{font-size:1.1rem;color:var(--text2);line-height:1.7;margin-bottom:1.2rem}
+.bc-desc strong{color:var(--text);font-weight:500}
 .bc-stack{display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.8rem}
 .bc-link{display:inline-flex;align-items:center;gap:0.4rem;font-family:var(--font-mono);font-size:0.88rem;color:var(--accent);margin-top:1.2rem;transition:gap 0.2s}
 .bc-link:hover{gap:0.7rem}
@@ -155,8 +156,8 @@ section{position:relative;z-index:1}
 .vol-card:hover{border-color:var(--border2);transform:translateY(-2px)}
 .vol-card:hover::before{opacity:1}
 .vol-meta{display:flex;align-items:center;gap:0.8rem;flex-wrap:wrap;margin-bottom:0.9rem}
-.vol-tag{font-family:var(--font-mono);font-size:0.74rem;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;padding:0.28rem 0.65rem;background:rgba(0,212,255,0.07);border:1px solid rgba(0,212,255,0.18);border-radius:3px}
-.vol-date{font-family:var(--font-mono);font-size:0.82rem;color:var(--text3)}
+.vol-tag{font-family:var(--font-mono);font-size:0.82rem;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;padding:0.28rem 0.65rem;background:rgba(0,212,255,0.07);border:1px solid rgba(0,212,255,0.18);border-radius:3px}
+.vol-date{font-family:var(--font-mono);font-size:0.88rem;color:var(--text3)}
 .vol-role{font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:var(--text);letter-spacing:-0.01em;margin-bottom:0.3rem}
 .vol-org{font-family:var(--font-mono);font-size:0.94rem;color:var(--accent);margin-bottom:1rem}
 .vol-ul{list-style:none;margin-top:0.5rem;margin-bottom:1rem}
@@ -173,7 +174,7 @@ section{position:relative;z-index:1}
 .sk-icon{width:44px;height:44px;border-radius:8px;background:var(--surface);display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:1rem}
 .sk-title{font-family:var(--font-display);font-size:1.12rem;font-weight:600;color:var(--text);margin-bottom:0.8rem}
 .sk-pills{display:flex;gap:0.4rem;flex-wrap:wrap}
-.sk-pill{font-family:var(--font-mono);font-size:0.82rem;background:var(--surface);color:var(--text2);padding:0.35rem 0.7rem;border-radius:3px;border:1px solid var(--border)}
+.sk-pill{font-family:var(--font-mono);font-size:0.88rem;background:var(--surface);color:var(--text2);padding:0.35rem 0.7rem;border-radius:3px;border:1px solid var(--border)}
 
 /* CERTIFICATIONS */
 .cert-section{margin-top:3.5rem}
@@ -184,9 +185,9 @@ section{position:relative;z-index:1}
 .cert-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--accent);opacity:0;transition:opacity 0.3s}
 .cert-card:hover{border-color:var(--border2);transform:translateY(-2px)}
 .cert-card:hover::before{opacity:1}
-.cert-issuer{font-family:var(--font-mono);font-size:0.78rem;color:var(--accent);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.55rem}
+.cert-issuer{font-family:var(--font-mono);font-size:0.86rem;color:var(--accent);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.55rem}
 .cert-title{font-family:var(--font-display);font-size:1.12rem;font-weight:600;color:var(--text);line-height:1.3;margin-bottom:0.7rem;letter-spacing:-0.01em}
-.cert-date{font-family:var(--font-mono);font-size:0.78rem;color:var(--text3)}
+.cert-date{font-family:var(--font-mono);font-size:0.86rem;color:var(--text3)}
 
 /* EDUCATION */
 .education{padding:6rem 0;background:var(--bg2)}
@@ -259,7 +260,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:1.6rem 2.
 @keyframes hmPulse{0%,100%{transform:scale(1);opacity:0.5}50%{transform:scale(1.6);opacity:0.05}}
 .hm-mk-core{fill:#00e5a0;filter:drop-shadow(0 0 6px #00e5a0)}
 .hm-mk-saha .hm-mk-core{fill:#00d4ff;filter:drop-shadow(0 0 6px #00d4ff)}
-.hm-mk-lbl{font-family:'DM Mono',monospace;font-size:13px;fill:#e8eaf0;font-weight:600;letter-spacing:0.04em}
+.hm-mk-lbl{font-family:'DM Mono',monospace;font-size:15px;fill:#e8eaf0;font-weight:600;letter-spacing:0.04em}
 .hm-fly{fill:#00d4ff;filter:drop-shadow(0 0 8px #00d4ff)}
 .hm-fly-saha{fill:#00e5a0;filter:drop-shadow(0 0 8px #00e5a0)}
 .hero-map-legend{position:absolute;bottom:-0.8rem;left:0;right:0;display:flex;justify-content:center;gap:1.2rem;flex-wrap:wrap;pointer-events:none}
@@ -329,8 +330,8 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:1.6rem 2.
 .journey-station:hover::after{opacity:1}
 .journey-flag{font-size:2.1rem;margin-bottom:0.5rem;line-height:1}
 .journey-country{font-family:var(--font-display);font-size:1.28rem;font-weight:700;color:var(--text);margin-bottom:0.25rem;letter-spacing:-0.01em}
-.journey-period{font-family:var(--font-mono);font-size:0.82rem;color:var(--text3);margin-bottom:0.55rem}
-.journey-tag{font-family:var(--font-mono);font-size:0.8rem;color:var(--accent);letter-spacing:0.04em}
+.journey-period{font-family:var(--font-mono);font-size:0.9rem;color:var(--text3);margin-bottom:0.55rem}
+.journey-tag{font-family:var(--font-mono);font-size:0.9rem;color:var(--accent);letter-spacing:0.04em}
 .journey-line{height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);min-width:30px;position:relative}
 .journey-line::after{content:'→';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);color:var(--accent);background:var(--bg);padding:0 0.4rem;font-family:var(--font-mono);font-size:0.78rem}
 
@@ -459,6 +460,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:1.6rem 2.
             <path id="hm-r1" class="hm-route" d="M717,196 Q472,30 228,133"/>
             <path id="hm-r2" class="hm-route" d="M228,133 Q361,15 494,78"/>
             <path id="hm-r3" class="hm-route hm-route-saha" d="M494,78 Q900,80 983,430"/>
+            <path id="hm-r4" class="hm-route hm-route-saha" d="M494,78 Q605,30 717,196"/>
           </g>
 
           <g class="hm-markers">
@@ -487,11 +489,12 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:1.6rem 2.
           <circle class="hm-fly" r="3.5"><animateMotion dur="5s" repeatCount="indefinite"><mpath href="#hm-r1"/></animateMotion></circle>
           <circle class="hm-fly" r="3.5"><animateMotion dur="5s" begin="1.6s" repeatCount="indefinite"><mpath href="#hm-r2"/></animateMotion></circle>
           <circle class="hm-fly hm-fly-saha" r="3.5"><animateMotion dur="5s" begin="3.2s" repeatCount="indefinite"><mpath href="#hm-r3"/></animateMotion></circle>
+          <circle class="hm-fly hm-fly-saha" r="3.5"><animateMotion dur="5s" begin="4.4s" repeatCount="indefinite"><mpath href="#hm-r4"/></animateMotion></circle>
         </svg>
 
         <div class="hero-map-legend">
           <span class="hml-item"><span class="hml-dot hml-dot-lived"></span>Lived &amp; built</span>
-          <span class="hml-item"><span class="hml-dot hml-dot-saha"></span>Currently advising</span>
+          <span class="hml-item"><span class="hml-dot hml-dot-saha"></span>Currently advising — Saha (NZ) &amp; Kynamatix (IN)</span>
         </div>
       </div>
     </div>
@@ -536,10 +539,10 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:1.6rem 2.
           <h3 class="bc-h3">SwipeUp AI Society</h3>
           <p class="bc-desc">My MSc taught theory. Nobody was teaching students how to actually open ChatGPT and do something useful. So I built it. A free platform mapping 65+ AI tools to real workflows — for students, teams, and educators. Deployed via GitHub Actions, built with Next.js and AI-assisted development.</p>
           <div style="display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:1rem">
-            <span style="font-family:var(--font-mono);font-size:0.82rem;color:var(--text3)"><strong style="color:var(--text)">65+</strong> tools curated</span>
-            <span style="font-family:var(--font-mono);font-size:0.82rem;color:var(--text3)"><strong style="color:var(--text)">10</strong> workflows</span>
-            <span style="font-family:var(--font-mono);font-size:0.82rem;color:var(--text3)"><strong style="color:var(--text)">3</strong> audience paths</span>
-            <span style="font-family:var(--font-mono);font-size:0.82rem;color:var(--text3)"><strong style="color:var(--text)">AI Quest</strong> — 6 missions</span>
+            <span style="font-family:var(--font-mono);font-size:0.95rem;color:var(--text3)"><strong style="color:var(--text)">65+</strong> tools curated</span>
+            <span style="font-family:var(--font-mono);font-size:0.95rem;color:var(--text3)"><strong style="color:var(--text)">10</strong> workflows</span>
+            <span style="font-family:var(--font-mono);font-size:0.95rem;color:var(--text3)"><strong style="color:var(--text)">3</strong> audience paths</span>
+            <span style="font-family:var(--font-mono);font-size:0.95rem;color:var(--text3)"><strong style="color:var(--text)">AI Quest</strong> — 6 missions</span>
           </div>
           <div class="bc-stack"><span class="stk">Next.js</span><span class="stk">GitHub Actions</span><span class="stk">Claude</span><span class="stk">AI-assisted dev</span></div>
           <a href="https://www.linkedin.com/company/swipeup-ai" target="_blank" class="bc-link">SwipeUp on LinkedIn →</a>
@@ -563,12 +566,12 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:1.6rem 2.
         <h3 class="bc-h3">SwipeUp AI Academy</h3>
         <p class="bc-desc">The Society maps the tools. The Academy teaches the work. Learners run consulting tasks for <strong>Velara Ltd</strong> (fictional) using the <strong>PEC framework</strong>, then get AI-assessed via <strong>SwipeUp Solve</strong> — modelled on McKinsey Solve. Now mentored by an Associate Pro VC at ULaw.</p>
         <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1rem">
-          <span style="font-family:var(--font-mono);font-size:0.78rem;color:var(--text3)"><strong style="color:var(--text)">Velara Ltd</strong></span>
-          <span style="font-family:var(--font-mono);font-size:0.78rem;color:var(--text3)"><strong style="color:var(--text)">PEC</strong></span>
-          <span style="font-family:var(--font-mono);font-size:0.78rem;color:var(--text3)"><strong style="color:var(--text)">SwipeUp Solve</strong></span>
+          <span style="font-family:var(--font-mono);font-size:0.92rem;color:var(--text3)"><strong style="color:var(--text)">Velara Ltd</strong></span>
+          <span style="font-family:var(--font-mono);font-size:0.92rem;color:var(--text3)"><strong style="color:var(--text)">PEC</strong></span>
+          <span style="font-family:var(--font-mono);font-size:0.92rem;color:var(--text3)"><strong style="color:var(--text)">SwipeUp Solve</strong></span>
         </div>
         <div class="bc-stack"><span class="stk">Product Design</span><span class="stk">Pedagogy</span><span class="stk">AI Assessment</span><span class="stk">Next.js</span></div>
-        <div style="margin-top:1rem;font-family:var(--font-mono);font-size:0.72rem;color:var(--text3)">with Arun Sai (co-founder)</div>
+        <div style="margin-top:1rem;font-family:var(--font-mono);font-size:0.85rem;color:var(--text3)">with <strong style="color:var(--text);font-weight:500">Arun Sai</strong> (co-founder)</div>
       </div>
 
       <div class="bc bs-third reveal">
@@ -580,18 +583,18 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:1.6rem 2.
             <line class="we" x1="200" y1="45" x2="240" y2="45"/>
             <g>
               <rect class="wn-rect" x="0" y="20" width="80" height="50" rx="6"/>
-              <text x="40" y="42" text-anchor="middle" fill="#e8eaf0" font-size="11" font-weight="600">N8N</text>
-              <text x="40" y="58" text-anchor="middle" fill="#8b92a5" font-size="9">URL in</text>
+              <text x="40" y="42" text-anchor="middle" fill="#e8eaf0" font-size="13" font-weight="600">N8N</text>
+              <text x="40" y="58" text-anchor="middle" fill="#8b92a5" font-size="11">URL in</text>
             </g>
             <g>
               <rect class="wn-rect" x="120" y="20" width="80" height="50" rx="6"/>
-              <text x="160" y="42" text-anchor="middle" fill="#e8eaf0" font-size="11" font-weight="600">Gemini</text>
-              <text x="160" y="58" text-anchor="middle" fill="#8b92a5" font-size="9">extract</text>
+              <text x="160" y="42" text-anchor="middle" fill="#e8eaf0" font-size="13" font-weight="600">Gemini</text>
+              <text x="160" y="58" text-anchor="middle" fill="#8b92a5" font-size="11">extract</text>
             </g>
             <g>
               <rect class="wn-rect wn-out" x="240" y="20" width="80" height="50" rx="6"/>
-              <text x="280" y="42" text-anchor="middle" fill="#e8eaf0" font-size="11" font-weight="600">Notion</text>
-              <text x="280" y="58" text-anchor="middle" fill="#8b92a5" font-size="9">logged</text>
+              <text x="280" y="42" text-anchor="middle" fill="#e8eaf0" font-size="13" font-weight="600">Notion</text>
+              <text x="280" y="58" text-anchor="middle" fill="#8b92a5" font-size="11">logged</text>
             </g>
             <circle class="wp" r="3.5" cy="45">
               <animate attributeName="cx" values="82;118;82" dur="1.4s" repeatCount="indefinite"/>
